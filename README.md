@@ -72,6 +72,30 @@ npm run dev
 
 The frontend will start on http://localhost:5173
 
+## Docker
+
+Build Docker images for the full application:
+
+```bash
+docker compose build
+```
+
+Run the application with Docker:
+
+```bash
+docker compose up -d
+```
+
+Application URLs:
+- Frontend: http://localhost:5173
+- Backend API: http://localhost:8080/api/tasks
+
+Stop containers:
+
+```bash
+docker compose down
+```
+
 ## API Endpoints
 
 - `GET /api/tasks` - Get all tasks
