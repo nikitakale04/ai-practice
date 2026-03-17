@@ -4,7 +4,7 @@ Spring Boot backend for the Household Monthly Task Tracker application.
 
 ## Prerequisites
 
-- Java 17 or higher
+- Java 21 or higher
 - Maven 3.6+ (or use the included Maven wrapper)
 
 ## Running the Application
@@ -23,14 +23,12 @@ mvn spring-boot:run
 
 The backend will start on http://localhost:8080
 
-## H2 Database Console
+## PostgreSQL Database
 
-Access the H2 console at: http://localhost:8080/h2-console
-
-Connection details:
-- **JDBC URL**: `jdbc:h2:mem:householddb`
-- **Username**: `sa`
-- **Password**: (leave blank)
+Default connection details:
+- **JDBC URL**: `jdbc:postgresql://localhost:5432/householddb`
+- **Username**: `household`
+- **Password**: `household`
 
 ## API Endpoints
 

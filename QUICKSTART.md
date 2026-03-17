@@ -21,7 +21,7 @@ The full-stack Household Monthly Task Tracker application has been successfully 
 
 ### 📦 Tech Stack
 - **Frontend**: React 18 with TypeScript, Tailwind CSS, Vite
-- **Backend**: Spring Boot 3.2.2, Java 17, H2 Database
+- **Backend**: Spring Boot 3.2.2, Java 21, PostgreSQL Database
 - **Architecture**: Monorepo with REST API
 
 ---
@@ -112,13 +112,12 @@ The top cards show:
 
 ## 🗄️ Database Access
 
-### H2 Console
-Access the database console at: **http://localhost:8080/h2-console**
+### PostgreSQL
+Default database connection details:
 
-**Connection Details:**
-- JDBC URL: `jdbc:h2:mem:householddb`
-- Username: `sa`
-- Password: *(leave blank)*
+- JDBC URL: `jdbc:postgresql://localhost:5432/householddb`
+- Username: `household`
+- Password: `household`
 
 ---
 
@@ -216,10 +215,10 @@ npm run build
 
 ## 📝 Notes
 
-- **Data Persistence**: H2 is an in-memory database, so data resets when the backend restarts
+- **Data Persistence**: PostgreSQL is persistent, so data is retained across restarts
 - **CORS**: Configured to allow requests from http://localhost:5173
 - **Port Configuration**: Backend uses 8080, Frontend uses 5173
-- **Future Enhancements**: You can upgrade to PostgreSQL or MySQL for persistent storage
+- **Future Enhancements**: You can add schema migrations with Flyway or Liquibase
 
 ---
 
@@ -236,7 +235,7 @@ Open http://localhost:5173 in your browser to start managing your household task
 ## 🆘 Troubleshooting
 
 ### Backend won't start
-- Ensure Java 17+ is installed: `java -version`
+- Ensure Java 21+ is installed: `java -version`
 - Check if port 8080 is available: `lsof -i:8080`
 - Verify JAR file exists: `ls -la backend/target/*.jar`
 
