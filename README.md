@@ -13,7 +13,7 @@ A full-stack application to manage household monthly recurring tasks like bill p
 ### Backend
 - **Spring Boot** (Java)
 - **Spring Data JPA** for data persistence
-- **H2 Database** (in-memory for development)
+- **PostgreSQL** database
 - **Maven** for dependency management
 
 ## Project Structure
@@ -44,7 +44,7 @@ household/
 ## Getting Started
 
 ### Prerequisites
-- Java 17 or higher
+- Java 21 or higher
 - Node.js 18 or higher
 - Maven 3.6+
 
@@ -57,10 +57,10 @@ cd backend
 
 The backend server will start on http://localhost:8080
 
-Access H2 Console: http://localhost:8080/h2-console
-- JDBC URL: `jdbc:h2:mem:householddb`
-- Username: `sa`
-- Password: (leave blank)
+Default PostgreSQL settings:
+- JDBC URL: `jdbc:postgresql://localhost:5432/householddb`
+- Username: `household`
+- Password: `household`
 
 ### Frontend Setup
 
@@ -118,8 +118,8 @@ The application comes pre-populated with common household tasks:
 ## Development
 
 ### Backend Development
-- The application uses H2 in-memory database
-- Data is reset on application restart
+- The application uses PostgreSQL database
+- Data persists across application restarts
 - JPA entities are auto-created via DDL
 - Sample data is loaded on startup
 
